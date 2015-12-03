@@ -20,7 +20,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         super.setUp();
         createApplication();
         application = getApplication();
-
     }
 
     public void testCorrectVersion() throws Exception {
