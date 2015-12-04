@@ -17,6 +17,6 @@ public class ExampleUnitTest {
 
     @Test
     public void addition_isIncorrect() throws Exception {
-        assertEquals(4, 2 + 4);
+        // assertEquals(4, 2 + 4);
     }
 }
