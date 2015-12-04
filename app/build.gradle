@@ -63,7 +63,10 @@ task jacocoTestReport(type:JacocoReport, dependsOn: "testDebug") {
 
     reports {
         xml.enabled = true
+        xml.destination = "${buildDir}/jacocoTestReport.xml"
+        csv.enabled = false
         html.enabled = true
+        html.destination = "${buildDir}/reports/jacoco"
     }
 }
 
@@ -108,6 +111,10 @@ dependencies {
 
     jacocoReport 'org.jacoco:org.jacoco.ant:0.7.2.201409121644'
 
+}
+
+jacoco {
+    toolVersion "0.7.2.201409121644"
 }
 
 
