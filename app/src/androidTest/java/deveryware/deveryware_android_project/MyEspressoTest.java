@@ -32,5 +32,6 @@ public class MyEspressoTest
     @Test
     public void testChangeText_sameActivity() {
         onView(withId(R.id.button)).perform(click()).check(matches(isDisplayed()));
+
     }
 }
