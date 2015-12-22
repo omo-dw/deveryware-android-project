@@ -10,6 +10,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class MyEspressoTest
         extends ActivityInstrumentationTestCase2<MainActivity> {
@@ -28,15 +29,8 @@ public class MyEspressoTest
         mActivity = getActivity();
     }
 
+    @Test
     public void testChangeText_sameActivity() {
-        onView(withId(R.id.textView)).perform(click()).check(matches(isDisplayed()));
-        // Type text and then press the button.
-        /*
-        onView(withId(R.id.editTextUserInput))
-                .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
-        onView(withId(R.id.changeTextButton)).perform(click());
-        */
-        // Check that the text was changed.
-
+        onView(withId(R.id.button)).perform(click()).check(matches(isDisplayed()));
     }
 }
