@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 apply plugin: "jacoco"
 apply plugin: "org.sonarqube"
 
+////////////////////////////////////////////////////////////////////
+// Buildscript
+
 buildscript {
     repositories {
         maven {
@@ -11,25 +14,12 @@ buildscript {
     }
     dependencies {
         classpath "gradle.plugin.com.vanniktech:gradle-android-junit-jacoco-plugin:0.2.0"
-    }
-}
-
-apply plugin: "com.vanniktech.android.junit.jacoco"
-
-jacoco {
-    toolVersion = "0.7.5.201505241946"
-}
-
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
         classpath "org.sonarqube.gradle:gradle-sonarqube-plugin:1.1"
     }
 }
+
+////////////////////////////////////////////////////////////////////
+// Android
 
 android {
     compileSdkVersion 23
@@ -94,6 +84,29 @@ dependencies {
     testCompile "org.assertj:assertj-core:1.7.0"
 }
 
+////////////////////////////////////////////////////////////////////
+// Jacoco
+
+apply plugin: "com.vanniktech.android.junit.jacoco"
+
+jacoco {
+    toolVersion = "0.7.5.201505241946"
+}
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+}
+
+def coverageSourceDirs = [
+        '../app/src/main/java'
+]
+
+
+
+////////////////////////////////////////////////////////////////////
+// Sonarqube
+
+
 sonarqube {
     properties {
 
@@ -119,11 +132,3 @@ configurations.all {
     resolutionStrategy.force 'com.android.support:support-annotations:23.1.1'
 }
 
-
-jacoco {
-    toolVersion = "0.7.1.201405082137"
-}
-
-def coverageSourceDirs = [
-        '../app/src/main/java'
-]
