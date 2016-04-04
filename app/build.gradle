@@ -109,7 +109,7 @@ sonarqube {
         property 'sonar.password', 'admin'
 
         property "sonar.sources", "src"
-        property "sonar.binaries", "build/classes/debug"
+        // property "sonar.binaries", "build/classes/debug"
         property "sonar.profile", "Android Lint"
         property "sonar.projectKey", "deveryware-android-project:app"
         property "sonar.projectName", "Deveryware Android Project"
