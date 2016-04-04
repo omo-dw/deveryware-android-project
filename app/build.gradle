@@ -119,7 +119,7 @@ sonarqube {
         property 'sonar.import_unknown_files', true
         property 'sonar.android.lint.report', 'build/outputs/lint-results.xml'
         property 'sonar.scm.provider', 'Git'
-        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/testDebugUnit.exec"
+        property "sonar.jacoco.reportPath", "build/jacoco/testDebugUnitTest.exec"
 
     }
 }
